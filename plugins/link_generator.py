@@ -1,35 +1,74 @@
-from pyrogram import Client, filters from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton from bot import Bot from config import ADMINS from helper_func import encode, get_message_id import asyncio import time from database.join_reqs import JoinReqs
+from pyrogram import Client, filters
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
+from bot import Bot
+from config import ADMINS
+from helper_func import encode, get_message_id
 
-Database instance
 
-jishubotz = JoinReqs()
 
-Dictionary to store link expiry data
+@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('batch'))
+async def batch(client: Client, message: Message):
+    while True:
+        try:
+            first_message = await client.ask(text = "Forward The First Message From DB Channel (With Quotes)..\n\nOr Send The DB Channel Post Link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        f_msg_id = await get_message_id(client, first_message)
+        if f_msg_id:
+            break
+        else:
+            await first_message.reply("❌ Error\n\nThis Forwarded Post Is Not From My DB Channel Or This Link Is Not Taken From DB Channel", quote = True)
+            continue
 
-link_expiry = {}
+    while True:
+        try:
+            second_message = await client.ask(text = "Forward The Last Message From DB Channel (With Quotes)..\n\nOr Send The DB Channel Post Link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        s_msg_id = await get_message_id(client, second_message)
+        if s_msg_id:
+            break
+        else:
+            await second_message.reply("❌ Error\n\nThis Forwarded Post Is Not From My DB Channel Or This Link Is Not Taken From DB Channel", quote = True)
+            continue
 
-@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('generate_link')) async def generate_link(client: Client, message: Message): user_id = message.from_user.id link = f"https://t.me/{client.me.username}?start={int(time.time())}" link_expiry[user_id] = time.time() + 1800  # 30 minutes expiry
 
-# Save in database
-jishubotz.save_link(user_id, link, link_expiry[user_id])
+    string = f"get-{f_msg_id * abs(client.db_channel.id)}-{s_msg_id * abs(client.db_channel.id)}"
+    base64_string = await encode(string)
+    link = f"https://t.me/{client.username}?start={base64_string}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
+    await second_message.reply_text(f"<b>Here Is Your Link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
 
-await message.reply_text(f"Your link: {link}\n\nThis link will expire in 30 minutes and regenerate automatically.")
 
-# Schedule deletion and regeneration
-asyncio.create_task(auto_refresh_link(client, user_id))
 
-async def auto_refresh_link(client: Client, user_id): await asyncio.sleep(1800)  # Wait for 30 minutes
 
-if user_id in link_expiry and time.time() >= link_expiry[user_id]:
-    new_link = f"https://t.me/{client.me.username}?start={int(time.time())}"
-    link_expiry[user_id] = time.time() + 1800
-    
-    # Update database
-    jishubotz.update_link(user_id, new_link, link_expiry[user_id])
-    
-    # Notify user
-    try:
-        await client.send_message(user_id, f"Your old link expired! Here is your new link: {new_link}")
-    except Exception as e:
-        print(f"Failed to notify user {user_id}: {e}")
+@Bot.on_message(filters.private & filters.user(ADMINS) & filters.command('genlink'))
+async def link_generator(client: Client, message: Message):
+    while True:
+        try:
+            channel_message = await client.ask(text = "Forward Message From The DB Channel (With Quotes)..\n\nOr Send The DB Channel Post link", chat_id = message.from_user.id, filters=(filters.forwarded | (filters.text & ~filters.forwarded)), timeout=60)
+        except:
+            return
+        msg_id = await get_message_id(client, channel_message)
+        if msg_id:
+            break
+        else:
+            await channel_message.reply("❌ Error\n\nThis Forwarded Post Is Not From My DB Channel Or This Link Is Not Taken From DB Channel", quote = True)
+            continue
 
+    base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
+    link = f"https://t.me/{client.username}?start={base64_string}"
+    reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://telegram.me/share/url?url={link}')]])
+    await channel_message.reply_text(f"<b>Here Is Your Link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
+
+
+
+
+
+
+
+# Jishu Developer 
+# Don't Remove Credit 🥺
+# Telegram Channel @Madflix_Bots
+# Backup Channel @JishuBotz
+# Developer @JishuDeveloper
