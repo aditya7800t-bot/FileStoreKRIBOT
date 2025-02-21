@@ -1,5 +1,5 @@
 from pyrogram import Client,filters,enums
-from pyrogram.types import ChatJoinRequest,
+from pyrogram.types import ChatJoinRequest
 InlineKeyboardMarkup, InlineKeyboardButton
 from database.join_reqs import JoinReqs
 from config import ADMINS, FORCE_SUB_CHANNEL
