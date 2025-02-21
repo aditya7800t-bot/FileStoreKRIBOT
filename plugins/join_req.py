@@ -9,7 +9,7 @@ import time
 
 jishubotz = JoinReqs
 
-Dictionary to store link expiry data
+# Dictionary to store link expiry data
 
 link_expiry = {}
 
