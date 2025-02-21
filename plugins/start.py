@@ -156,11 +156,14 @@ async def not_joined(client: Client, message: Message):
         quote = True,
         disable_web_page_preview = True
     )
-  # 10 seconds ke baad message delete karna
+    # 10 seconds wait karo, fir buttons delete karo
     await asyncio.sleep(10)
-    await sent_msg.delete()
     
-
+    try:
+        await sent_msg.edit_reply_markup(None)  # Remove Buttons
+    except Exception as e:
+        print(f"Error in removing buttons: {e}")
+        
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
 async def get_users(client: Bot, message: Message):
