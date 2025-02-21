@@ -156,7 +156,10 @@ async def not_joined(client: Client, message: Message):
         quote = True,
         disable_web_page_preview = True
     )
-
+  # 10 seconds ke baad message delete karna
+    await asyncio.sleep(10)
+    await sent_msg.delete()
+    
 
 
 @Bot.on_message(filters.command('users') & filters.private & filters.user(ADMINS))
