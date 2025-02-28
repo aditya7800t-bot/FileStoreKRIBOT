@@ -59,9 +59,9 @@ BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
 USER_REPLY_TEXT = "<b></b>"
 
-START_MSG = os.environ.get("START_MESSAGE", "<b><blockquote>›› Hᴇʏ {first} ×</blockquote>     ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀᴅʀ ᴀɴɪᴍᴇ ʜɪɴᴅɪ ⚡.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>›› Hᴇʏ {first} × \n     ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴀᴅʀ ᴀɴɪᴍᴇ ʜɪɴᴅɪ ⚡.</b>")
 
-FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b><blockquote>›› Hᴇʏ {mention} ×</blockquote>      ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ, ᴊᴏɪɴ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.</b>")
+FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>›› Hᴇʏ {mention} × \n     ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ, ᴊᴏɪɴ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.</b>")
 
 
 
