@@ -11,7 +11,7 @@ API_HASH = os.environ.get("API_HASH", "822cb334ca4527a134aae97f9fe44fd6")
 
 
 OWNER_ID = int(os.environ.get("OWNER_ID", "6987158459"))
-DB_URL = os.environ.get("DB_URL", "mongodb+srv://akashrabha2005:781120@cluster0.pv6yd2f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
+DB_URL = os.environ.get("DB_URL", "mongodb+srv://akashz9t:asdfg@cluster0.zu0io.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")
 JOIN_REQ_DB = os.environ.get("JOIN_REQ_DB", DB_URL)
 DB_NAME = os.environ.get("DB_NAME", "Madflix-Files")
 
