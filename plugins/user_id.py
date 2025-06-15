@@ -22,8 +22,8 @@ async def showid(client, message):
 
 
 
-# Jishu Developer 
-# Don't Remove Credit 🥺
-# Telegram Channel @Madflix_Bots
-# Backup Channel @JishuBotz
-# Developer @JishuDeveloper
+# Developer 
+# Don't try 🥺
+# Telegram Channel @
+# Backup Channel @
+# Developer @
