@@ -8,12 +8,12 @@
   "env": {
       "API_ID": {
           "description": "Your APP ID From my.telegram.org ",
-          "value": "",
+          "value": "24828197",
           "required": true
       },
       "API_HASH": {
           "description": "Your API Hash From my.telegram.org ",
-          "value": "",
+          "value": "d36e278e89ebeb900aeda4128d413a77",
           "required": true
       },
       "BOT_TOKEN": {
@@ -23,12 +23,12 @@
       },
       "OWNER_ID": {
         "description":"Add Your User ID here",
-        "value": "",
+        "value": "7660990923",
         "required": true
       },
       "CHANNEL_ID": {
           "description":"Make a channel (database channel), then make the bot as admin in channel, and it's id",
-          "value": "",
+          "value": "-1002489417159",
           "required": true          
       },
       "FORCE_SUB_CHANNEL": {
@@ -58,7 +58,7 @@
       },
       "ADMINS": {
         "description": "A space separated list of user_ids of Admins, they can only create links",
-        "value": "",
+        "value": "2089948673",
         "required": false
       },
       "PROTECT_CONTENT": {
@@ -68,7 +68,7 @@
       },
       "FILE_AUTO_DELETE": {
         "description": "auto delete in seconds",
-        "value": "600",
+        "value": "1800",
         "required": false
       }
   },
