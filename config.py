@@ -5,13 +5,13 @@ from logging.handlers import RotatingFileHandler
 
 
 
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8007346888:AAFC-NAVQkw4Zy7_zVa4856H8EN1aHOSRsw")
-API_ID = int(os.environ.get("API_ID", "27705761"))
-API_HASH = os.environ.get("API_HASH", "822cb334ca4527a134aae97f9fe44fd6")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "7591126816:AAG3XXGZUXkIFUkK4Qtu6uD2Az3kRLTiP6A")
+API_ID = int(os.environ.get("API_ID", "24828197"))
+API_HASH = os.environ.get("API_HASH", "d36e278e89ebeb900aeda4128d413a77")
 
 
-OWNER_ID = int(os.environ.get("OWNER_ID", "7660990923"))
-DB_URL = os.environ.get("DB_URL", "")
+OWNER_ID = int(os.environ.get("OWNER_ID", "7768598381"))
+DB_URL = os.environ.get("DB_URL", "mongodb+srv://musicbhaikon9910:krishna@cluster0.cwvegmt.mongodb.net/")
 JOIN_REQ_DB = os.environ.get("JOIN_REQ_DB", DB_URL)
 DB_NAME = os.environ.get("DB_NAME", "Madflix-Files")
 
@@ -59,7 +59,7 @@ BOT_STATS_TEXT = "<b>BOT UPTIME :</b>\n{uptime}"
 
 USER_REPLY_TEXT = "<b></b>"
 
-START_MSG = os.environ.get("START_MESSAGE", "<b>›› Hᴇʏ {first} × \n     ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @NEW_ANIMES_HINDI_DUB_INDIA ⚡.</b>")
+START_MSG = os.environ.get("START_MESSAGE", "<b>›› Hᴇʏ {first} × \n     ɪ ᴀᴍ ᴀ ғɪʟᴇ sᴛᴏʀᴇ ʙᴏᴛ ᴘᴏᴡᴇʀᴇᴅ ʙʏ @ADR_ANIME_HINDI ⚡.</b>")
 
 FORCE_MSG = os.environ.get("FORCE_SUB_MESSAGE", "<b>›› Hᴇʏ {mention} × \n     ʏᴏᴜʀ ғɪʟᴇ ɪs ʀᴇᴀᴅʏ ‼️ ʟᴏᴏᴋs ʟɪᴋᴇ ʏᴏᴜ ʜᴀᴠᴇɴ'ᴛ ᴊᴏɪɴ ᴛᴏ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs ʏᴇᴛ, ᴊᴏɪɴ ɴᴏᴡ ᴛᴏ ɢᴇᴛ ʏᴏᴜʀ ғɪʟᴇs.</b>")
 
