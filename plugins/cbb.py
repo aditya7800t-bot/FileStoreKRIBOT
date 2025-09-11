@@ -10,7 +10,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     data = query.data
     if data == "about":
         await query.message.edit_text(
-            text = f"<b>›› ʙʏ : @NEW_ANIMES_HINDI_DUB_INDIA</b>",
+            text = f"<b>›› ʙʏ : @ADR_ANIME_HINDI</b>",
             disable_web_page_preview = True,
             reply_markup = InlineKeyboardMarkup([
                 [InlineKeyboardButton("ʜᴏᴍᴇ", callback_data = "home"),
